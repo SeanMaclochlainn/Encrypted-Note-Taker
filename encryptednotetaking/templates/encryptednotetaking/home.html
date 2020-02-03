@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+</head>
+<body ng-app="encryptednotetaking">
+
+    {% verbatim %}
+    <div ng-controller="NotesController">
+            {{ data.notes[0].title }}
+    </div>
+
+    <!-- <div ng-controller="NotesController">
+        <div ng-repeat="note in data">
+            {{ note.name }}
+        </div>
+    </div> -->
+    <div ng-controller="NotesController">
+        <div ng-repeat="note in data.notes">
+            {{ note.title }}
+        </div>
+    </div>
+    {% endverbatim %}
+
+    <script src="{% static "encryptednotetaking/encryptednotetaking.js" %}"></script>
+</body>
+</html>
