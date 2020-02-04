@@ -25,7 +25,7 @@ SECRET_KEY = 'y9)rpvo^0^k#zuo^vh)b7)7i*ch6#63&@lj-1_#k0c-5_htwvw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['encrypted-note-taker.rmeu8ddiaf.eu-west-1.elasticbeanstalk.com']
 
 
 # Application definition
