@@ -2,42 +2,11 @@
     "use strict";
 
     angular.module('encryptednotetaking', [])
-        .controller('NotesController', ['$scope', NotesController]);
-        /*function NotesController($scope){
-            $scope.note = {
-                title:"test1"
-            }
-        }*/
-        function NotesController($scope){
-            $scope.data =
-            {
-                notes:[
-                    {
-                        title: "note1",
-                        content: "content"
-                    },
-                    {
-                        title: "note2",
-                        content: "content2"
-                    }
-                ]
-            }
+        .controller('NotesController', ['$scope', '$http', NotesController]);
+        function NotesController($scope, $http){
+            $scope.data = [];
+            $http.get('/encryptednotetaking/notes').then(function(response){
+                $scope.data = response.data;
+            });
         }
-        // function NotesController($scope){
-        //     $scope.data = [
-        //         {
-        //             name:"test33",
-        //             notes:[
-        //                 {
-        //                     title: "note1",
-        //                     content: "content"
-        //                 },
-        //                 {
-        //                     title: "note2",
-        //                     content: "content2"
-        //                 }
-        //             ]
-        //         }
-        //     ]
-        // }
 }());
