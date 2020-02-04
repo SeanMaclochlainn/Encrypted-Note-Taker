@@ -8,20 +8,14 @@
 </head>
 <body ng-app="encryptednotetaking">
 
-    {% verbatim %}
+    {% verbatim %}  
     <div ng-controller="NotesController">
-            {{ data.notes[0].title }}
-    </div>
-
-    <!-- <div ng-controller="NotesController">
         <div ng-repeat="note in data">
-            {{ note.name }}
-        </div>
-    </div> -->
-    <div ng-controller="NotesController">
-        <div ng-repeat="note in data.notes">
             {{ note.title }}
         </div>
+        <input type="text" ng-model="title" />
+        <textarea ng-model="content"></textarea>
+        <button ng-click="add(title, content)">add</button>
     </div>
     {% endverbatim %}
 
