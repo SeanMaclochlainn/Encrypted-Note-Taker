@@ -1,0 +1,11 @@
+<div ng-hide="isNewNoteActive" ng-click="isNewNoteActive=true">
+   <button>add note</button>
+</div>
+<div ng-show="isNewNoteActive" ng-model-options="modelOptions">
+    <div>
+        <input type="text" ng-model="title" />
+        <textarea type="text" ng-model="content" ></textarea>
+        <button ng-click="isNewNoteActive=false">Close</button>
+        <button ng-click="add(title, content)">Add</button>
+    </div>
+</div>

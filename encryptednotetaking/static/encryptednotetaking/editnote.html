@@ -1,10 +1,10 @@
-<div ng-hide="edit" ng-click="edit=true">
+<div ng-hide="isEditNoteActive" ng-click="isEditNoteActive=true">
     <h4>{{ note.title }}</h4>
 </div>
-<div ng-show="edit" ng-model-options="modelOptions">
+<div ng-show="isEditNoteActive" ng-model-options="modelOptions">
     <div>
         <textarea type="text" ng-model="note.encrypted_content" ng-change="update()"></textarea>
     </div>
-    <button ng-click="edit=false">Close</button>
+    <button ng-click="isEditNoteActive=false">Close</button>
     <button ng-click="delete()">Delete Card</button>
 </div>
