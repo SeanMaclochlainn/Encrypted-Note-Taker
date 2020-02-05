@@ -2,11 +2,11 @@
     "use strict";
 
     angular.module('encryptednotetaking')
-        .directive('encryptedNote', NoteDirective);
+        .directive('editNote', NoteDirective);
 
         function NoteDirective(){
             return {
-                templateUrl: 'static/encryptednotetaking/note.html',
+                templateUrl: 'static/encryptednotetaking/editnote.html',
                 restrict: 'E',
                 controller: ['$scope', '$http', function ($scope, $http) {
                     var url = '/encryptednotetaking/notes/' + $scope.note.id + '/';

@@ -7,11 +7,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
 </head>
 <body ng-app="encryptednotetaking">
-
+    
     {% verbatim %}  
     <div ng-controller="NotesController">
         <p ng-repeat="note in data">
-            <encrypted-note></encrypted-note>
+            <edit-note></edit-note>
         </p>
         <input type="text" ng-model="title" />
         <textarea ng-model="content"></textarea>
@@ -20,6 +20,6 @@
     {% endverbatim %}
 
     <script src="{% static "encryptednotetaking/encryptednotetaking.js" %}"></script>
-    <script src="{% static "encryptednotetaking/note.directive.js" %}"></script>
+    <script src="{% static "encryptednotetaking/editnote.directive.js" %}"></script>
 </body>
 </html>
