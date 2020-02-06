@@ -23,10 +23,14 @@
     </nav>
     <main role="main" class="container">
         <div ng-controller="NotesController">
-            <p ng-repeat="note in data">
-                <edit-note></edit-note>
-            </p>
-            <new-note></new-note>
+            <div class="my-3 p-3 bg-white rounded shadow-sm">
+                <h6 class="border-bottom border-gray pb-2 mb-0">Notes</h6>
+                <p ng-repeat="note in data">
+                    <edit-note></edit-note>
+                </p>
+            </div>
+        </div>
+        <new-note></new-note>
         </div>
     </main>
 
