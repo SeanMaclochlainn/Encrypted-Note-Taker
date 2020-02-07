@@ -6,13 +6,13 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <input class="modal-title form-control" id="newModalLabel" ng-model="note.title">
+        <input class="modal-title form-control" id="newModalLabel" ng-model="note_title">
       </div>
       <div class="modal-body">
-        <textarea class="form-control" type="text" ng-model="note.encrypted_content" rows="15"></textarea>
+        <textarea class="form-control" type="text" ng-model="note_content" rows="15"></textarea>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-primary" type="button" data-dismiss="modal" ng-click="add()">Add note</button>
+        <button class="btn btn-primary" type="button" data-dismiss="modal" ng-click="add(note_title, note_content)">Add note</button>
       </div>
     </div>
   </div>

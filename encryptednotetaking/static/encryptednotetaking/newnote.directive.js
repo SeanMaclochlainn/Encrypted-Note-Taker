@@ -9,14 +9,19 @@
                 templateUrl: 'static/encryptednotetaking/newnote.html',
                 restrict: 'E',
                 controller: ['$scope', '$http', function ($scope, $http) {
-                    $scope.add = function(){
-                        $http.post('/encryptednotetaking/notes/', $scope.note).then(
-                            function(){
+                    $scope.add = function(title, content){
+                        let note = {
+                            title: title,
+                            encrypted_content: content
+                        };
+                        $http.post('/encryptednotetaking/notes/', note).then(
+                            function(response){
                                 let notes = $scope.data;
-                                notes.push($scope.note);
-                                $scope.isNewNoteActive = false;
+                                notes.push(response.data);
                             }
                         );
+                        $scope.note_title = '';
+                        $scope.note_content = '';
                     };
                 }]
     
